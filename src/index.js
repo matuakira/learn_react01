@@ -77,8 +77,15 @@ const func1 = function (str) {
 };
 console.log(func1("func1です"));
 
-// アロー関数
+// アロー関数を使った宣言
 const func2 = (str) => {
   return str;
 };
 console.log(func2("func2です"));
+
+// アロー関数を使った宣言。1行ならreturn省略可能
+const func2_1 = (str) => str;
+console.log(func2_1("func2_1です"));
+
+const func3 = (num1, num2) => num1 + num2;
+console.log(func3(9, 4));
