@@ -79,9 +79,9 @@
 
 // // アロー関数を使った宣言
 // const func2 = (str) => {
-//   return str;
+//   return `This is [${str}] test.`;
 // };
-// console.log(func2("func2です"));
+// console.log(func2("func2"));
 
 // // アロー関数を使った宣言。1行ならreturn省略可能
 // const func2_1 = (str) => str;
@@ -143,14 +143,78 @@
 // console.log(arr3_2);
 
 // 配列のコピー、結合。ちゃんと値渡しされる。
-const arr4 = [10, 20];
-const arr5 = [30, 40];
-const arr6 = [...arr4];
-console.log(arr6);
+// const arr4 = [10, 20];
+// const arr5 = [30, 40];
+// const arr6 = [...arr4];
+// console.log(arr6);
 
-const arr7 = [...arr4, ...arr5];
-console.log(arr7);
-// 下のようにしては、参照渡しになってしまう。
-const arr8 = arr4;
-console.log(arr4);
-arr8[0] = 5;
+// const arr7 = [...arr4, ...arr5];
+// console.log(arr7);
+// // 下のようにしては、参照渡しになってしまう。
+// const arr8 = arr4;
+// console.log(arr4);
+// arr8[0] = 5;
+
+/**
+ * mapやfilterを使った配列の処理
+ * →for文をあまり使わなくなった
+ */
+//const nameArr = ["田中", "山田", "じゃけぇ"];
+// for (let index = 0; index < nameArr.length; index++) {
+//   console.log(`${index}番目は${nameArr[index]}です。`);
+// }
+
+// const nameArr2 = nameArr.map((name) => {
+//   return name;
+// });
+// console.log(nameArr2);
+
+// 配列の中身をnameで受けている。mapの効果。
+// mapの引数はコールバック関数。配列の要素ごとに呼び出される。
+// callback が実行されるたびに、返された値が new_array に追加されます。
+// let newArr = nameArr.map((name) => {
+//   if (name === "じゃけぇ") {
+//     return name;
+//   } else {
+//     return `${name}さん。`;
+//   }
+// });
+// console.log(nameArr);
+// console.log(newArr);
+
+// mapの1番目の引数は要素、2番目の引数はindex
+// let nArr = nameArr.map((name, index) => {
+//   return `${index}番目は${name}です`;
+// });
+// console.log(nameArr);
+// console.log(nArr);
+
+// フィルタ。ある条件に合致するものを取り出す。
+// filterの引数は、mapと同じくコールバック関数。
+// const numArr = [1, 2, 3, 4, 5];
+// const newNumArr = numArr.filter((num) => {
+//   //奇数のものだけ返すフィルタ
+//   return num % 2 === 1;
+// });
+// console.log(newNumArr);
+
+/**
+ * 三項演算子。
+ * これは別に新しいjavascriptではないが、reactで多用されるので。
+ */
+// ある条件 ? 条件がtrueの時 : 条件がfalseの時
+// まあ、以下はかならずtrueになるが。
+// const val1 = 1 > 0 ? `true` : false;
+// console.log(val1);
+
+// 以下のような使い方もできる。formattedNumにセットする値を場合分け。
+// let num = "1300";
+// num = 13450300;
+// const formattedNum =
+//   typeof num === "number" ? num.toLocaleString() : "数値を入力してください。";
+// console.log(formattedNum);
+
+const checkSum = (num1, num2) => {
+  return num1 + num2 > 100 ? `100超えてしまってる` : `許容範囲`;
+};
+console.log(checkSum(50, 50));
