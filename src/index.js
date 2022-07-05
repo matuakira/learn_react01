@@ -214,7 +214,31 @@
 //   typeof num === "number" ? num.toLocaleString() : "数値を入力してください。";
 // console.log(formattedNum);
 
-const checkSum = (num1, num2) => {
-  return num1 + num2 > 100 ? `100超えてしまってる` : `許容範囲`;
-};
-console.log(checkSum(50, 50));
+// const checkSum = (num1, num2) => {
+//   return num1 + num2 > 100 ? `100超えてしまってる` : `許容範囲`;
+// };
+// console.log(checkSum(50, 50));
+
+/**
+ * 論理演算氏の本当の意味を知ろう
+ * &&とか||とか。
+ * reactでよく登場する。
+ */
+// const flag1 = true;
+// const flag2 = false;
+// if (flag1 || flag2) {
+//   console.log("1か2がtrue");
+// }
+// if (flag1 && flag2) {
+//   console.log("1も2がtrue");
+// }
+
+// || は左辺がfalseなら右辺を返す。左辺がtrueなら左辺を返す。
+// const num = 0.1;
+// const fee = num || "金額未設定です";
+// console.log(fee);
+
+// && は左辺がtrueなら右辺を返す。左辺がfalseなら左辺を返す。
+// const num2 = 0;
+// const fee2 = num2 && "何か設定されました";
+// console.log(fee2);
